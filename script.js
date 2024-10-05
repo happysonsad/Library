@@ -16,18 +16,6 @@ function addBookToLibrary() {
 
 
 // DOM
-// press "+ add book buuton", then pop in a form to fill the book info:
-//     (Header)
-//       Title 
-//       Author 
-//       pages
-
-//       read?
-
-//       [submit button]
-
-// after click submit, the book info will show on the layout
-
 const addBookModal = document.querySelector("#addBookModal");
 
 const addBookButton = document.querySelector(".addBookButton");
