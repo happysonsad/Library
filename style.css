@@ -151,6 +151,12 @@ main {
     cursor: pointer;
 }
 
+.form-title > input:focus,
+.form-author > input:focus,
+.form-pages > input:focus {
+    outline: var(--bg-clr-lightBlue-mix-oragne) 3px solid;
+}
+
 .addBookFrom > .submitButton:hover {
     background-color: var(--bg-clr-lightBlue-mix-oragne);
     color: #f4f4f4;
