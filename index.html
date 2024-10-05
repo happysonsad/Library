@@ -21,19 +21,21 @@
         <div class="book-grid" id="booksGrid"></div>
     </main>
     
-    <!-- add a form for add book:title, author, pages; read? submit -->
     <div class="modal" id="addBookModal">
         <form class="addBookFrom">
-            <h3>Add New Book</h3>
-            <label for="title"></label>
-            <input class="addBookInput" type="text" name="title" id="title" placeholder="Title"/>
-
-            <label for="author"></label>
-            <input class="addBookInput" type="text" name="author" id="author" placeholder="Author"/>
-
-            <label for="pages"></label>
-            <input class="addBookInput" type="number" name="pages" id="pages" placeholder="Pages"/>
-
+            <h2>Add New Book</h2>
+            <div class="form-title">
+                <label for="title"></label>
+                <input class="addBookInput" type="text" name="title" id="title" placeholder="Title"/>
+            </div>
+            <div class="form-author">
+                <label for="author"></label>
+                <input class="addBookInput" type="text" name="author" id="author" placeholder="Author"/>
+            </div>
+            <div class="form-pages">
+                <label for="pages"></label>
+                <input class="addBookInput" type="number" name="pages" id="pages" placeholder="Pages"/>
+            </div>
             <div class="whether-is-read">
                 <label for="is-read">Have you read it?</label>
                 <input class="read-checkbox" type="checkbox" id="is-read" />
@@ -43,7 +45,7 @@
         </form>
     </div>
 
-    <!-- and then hide it -->
+
 
 
 

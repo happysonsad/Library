@@ -102,29 +102,66 @@ main {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
     animation-name: fadeIn;
-    animation-duration: 0.4s
+    animation-duration: 1s
 }
 
-.addBookForm {
-    display: flex;
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    bottom: 0;
-    background-color: #fefefe;
-    width: 100%;
-    animation-name: slideIn;
-    animation-duration: 0.4s
-}
-
-@keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
-  }
-  
-  @keyframes fadeIn {
+@keyframes fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
-  }
+}
+
+.addBookFrom {
+    background-color: rgba(137, 207, 235, 80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px  rgba(41, 41, 41, 0.8);
+}
+
+.form-title > input,
+.form-author > input,
+.form-pages > input,
+.addBookFrom > .submitButton {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.form-title > input,
+.form-author > input,
+.form-pages > input,
+.addBookFrom > .submitButton {
+    font-size: 1.3rem;
+}
+
+.addBookFrom > h2 {
+    font-weight: bolder;
+}
+
+
+.addBookFrom > .submitButton {
+    padding: 0.5rem 5rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.addBookFrom > .submitButton:hover {
+    background-color: var(--bg-clr-lightBlue-mix-oragne);
+    color: #f4f4f4;
+    font-weight: bolder;
+}
+
+.whether-is-read > label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.whether-is-read > input {
+    margin-left: 0.5rem;
+}
