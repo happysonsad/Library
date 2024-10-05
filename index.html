@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
 </head>
 <body>
     
@@ -17,10 +16,40 @@
 
     <main class="main-section">
         <div class="button-container">
-            <button type="button">+ Add Book</button>
+            <button type="button" class="addBookButton">+ Add Book</button>
         </div>
-        <div class="card-container"></div>
+        <div class="book-grid" id="booksGrid"></div>
     </main>
     
+    <!-- add a form for add book:title, author, pages; read? submit -->
+    <div class="modal" id="addBookModal">
+        <form class="addBookFrom">
+            <h3>Add New Book</h3>
+            <label for="title"></label>
+            <input class="addBookInput" type="text" name="title" id="title" placeholder="Title"/>
+
+            <label for="author"></label>
+            <input class="addBookInput" type="text" name="author" id="author" placeholder="Author"/>
+
+            <label for="pages"></label>
+            <input class="addBookInput" type="number" name="pages" id="pages" placeholder="Pages"/>
+
+            <div class="whether-is-read">
+                <label for="is-read">Have you read it?</label>
+                <input class="read-checkbox" type="checkbox" id="is-read" />
+            </div>
+
+            <button class="submitButton" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- and then hide it -->
+
+
+
+
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
