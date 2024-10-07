@@ -34,13 +34,15 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
     --bg-clr-lightBlue-mix-oragne: color-mix(in srgb, lightblue 80%, orange 25%);
+    --sky-blue: rgba(137, 207, 235, 80%);
+    --border-shadow: 1px 1px 3px rgba(41, 41, 41, 0.8);
 }
 
 
 body {
     display: grid;
     grid-template-rows: minmax(100px, 1fr) minmax(auto, 8fr);
-    overflow: hidden;
+    overflow: auto;
 }
 
 header {
@@ -56,6 +58,7 @@ header {
 
 main {
     background-color: var(--bg-clr-lightBlue-mix-oragne);
+
 }
 
 .button-container {
@@ -65,8 +68,9 @@ main {
 
 .button-container > button {
     background: none;
+    border: var(--sky-blue) 5px outset;
+    border-radius: 1rem;
 	color: inherit;
-	border: none;
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
@@ -78,42 +82,20 @@ main {
 }
 
 .button-container > button:hover {
-    background-color: rgba(5, 103, 12, 0.3);
+    background-color: var(--sky-blue);
     border-radius: 1rem;
 }
 
 .book-grid {
     display: grid;
-    width: 100%;
-    height: 100%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-#addBookModal {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    animation-name: fadeIn;
-    animation-duration: 1s
-}
-
-@keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
+    gap: 2.5rem;
+    width: 80vw;
+    margin: 0 auto;
 }
 
 .addBookFrom {
-    background-color: rgba(137, 207, 235, 80%);
+    background-color: var(--sky-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,7 +103,7 @@ main {
     gap: 1rem;
     padding: 1.5rem 2rem;
     border-radius: 1rem;
-    box-shadow: 1px 1px 3px  rgba(41, 41, 41, 0.8);
+    box-shadow: var(--border-shadow);
 }
 
 .form-title > input,
@@ -170,4 +152,56 @@ main {
 
 .whether-is-read > input {
     margin-left: 0.5rem;
+}
+
+/* new book */
+.book-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 30vh;
+    width: 30vh;
+    align-items: center;
+    grid-row: 1;
+    background-color: var(--sky-blue);
+    border-radius: 1.5rem;
+    box-shadow: var(--border-shadow);
+    /* max-width: 100vh; */
+}
+
+.book-card > p:first-child {
+    font-style: italic;
+}
+
+.book-card > p:first-child::before {
+    content: "Title: ";
+}
+
+.book-card > p:nth-child(3)::after {
+    content: " pages";
+}
+
+
+#addBookModal {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    animation-name: fadeIn;
+    animation-duration: 1s
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }

@@ -22,38 +22,46 @@
     </main>
     
     <div class="modal" id="addBookModal">
-        <form class="addBookFrom">
+        <form class="addBookFrom" action="#" method="post" id="bookForm">
             <h2>Add New Book</h2>
             <div class="form-title">
                 <label for="title"></label>
-                <input class="addBookInput" type="text" name="title" id="title" placeholder="Title"/>
+                <input class="bookTitle addBookInput" 
+                type="text" 
+                name="title" 
+                id="title" 
+                placeholder="Title"
+                required />
             </div>
             <div class="form-author">
                 <label for="author"></label>
                 <input 
-                class="addBookInput" 
+                class="bookAuthor addBookInput" 
                 type="text" 
                 name="author" 
                 id="author" 
                 placeholder="Author"
-                pattern="[A-Za-z]" />
+                required />
             </div>
             <div class="form-pages">
                 <label for="pages"></label>
                 <input 
-                class="addBookInput" 
+                class="bookPages addBookInput" 
                 type="number" 
                 name="pages" 
                 id="pages" 
                 placeholder="Pages"
-                min="1" />
+                min="1"
+                required />
             </div>
             <div class="whether-is-read">
-                <label for="is-read">Have you read it?</label>
-                <input class="read-checkbox" type="checkbox" id="is-read" />
+                <label for="status">Have you read it?</label>
+                <input class="read-checkbox" 
+                type="checkbox" 
+                id="status" />
             </div>
 
-            <button class="submitButton" type="submit">Submit</button>
+            <button class="submitButton" type="submit">Add to Library</button>
         </form>
     </div>
 
