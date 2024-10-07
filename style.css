@@ -67,19 +67,32 @@ main {
     padding: 2.5rem 0;
 }
 
-.button-container > button {
+.button-container > .addBookButton {
     background: none;
     border: var(--sky-blue) 5px outset;
     border-radius: 1rem;
 	color: inherit;
 	padding: 0;
-	font: inherit;
 	cursor: pointer;
 	outline: inherit;
 
     font-size: 1.5rem;
     font-weight: bolder;
     padding: 0.5rem 1rem;
+
+    animation: silo-fade 0.2s;
+}
+
+/* addNewBook - animation */
+@keyframes silo-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .button-container > button:hover {
@@ -225,6 +238,10 @@ main {
     background-color: var(--sky-blue);
     border-radius: 1.5rem;
     box-shadow: var(--border-shadow);
+}
+
+.book-card:last-child {
+    animation: silo-fade 0.2s;
 }
 
 
