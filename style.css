@@ -35,6 +35,7 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
     --bg-clr-lightBlue-mix-oragne: color-mix(in srgb, lightblue 80%, orange 25%);
     --sky-blue: rgba(137, 207, 235, 80%);
+    --white-text: #f4f4f4;
     --border-shadow: 1px 1px 3px rgba(41, 41, 41, 0.8);
 }
 
@@ -48,7 +49,7 @@ body {
 header {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
 
     .heading-title {
         font-size: 1.5rem;
@@ -87,10 +88,10 @@ main {
 }
 
 .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 60vw;
     margin: 0 auto;
 }
 
@@ -141,7 +142,7 @@ main {
 
 .addBookFrom > .submitButton:hover {
     background-color: var(--bg-clr-lightBlue-mix-oragne);
-    color: #f4f4f4;
+    color: var(--white-text);
     font-weight: bolder;
 }
 
@@ -154,34 +155,43 @@ main {
     margin-left: 0.5rem;
 }
 
+.readStatus {
+    border: none;
+    border-radius: 1rem;
+    padding: 3px 10px;
+    background-color: var(--bg-clr-lightBlue-mix-oragne);
+    color: var(--white-text);
+    font-weight: bold;
+}
+
+.removeButton {
+    border: none;
+    border-radius: 1rem;
+    padding: 3px 10px;
+    background-color: #f08080;
+    font-weight: bold;
+    color: var(--white-text);
+}
+
 /* new book */
 .book-card {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    height: 30vh;
-    width: 30vh;
+    flex-wrap: wrap;
+    height: 10vh;
+    gap: 0.5rem;
+    width: 100%;
     align-items: center;
-    grid-row: 1;
     background-color: var(--sky-blue);
     border-radius: 1.5rem;
     box-shadow: var(--border-shadow);
-    /* max-width: 100vh; */
 }
 
-.book-card > p:first-child {
-    font-style: italic;
+.libraryButtonContainer {
+    display: flex;
+    gap: 2rem;
 }
-
-.book-card > p:first-child::before {
-    content: "Title: ";
-}
-
-.book-card > p:nth-child(3)::after {
-    content: " pages";
-}
-
 
 #addBookModal {
     display: none; /* Hidden by default */

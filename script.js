@@ -35,20 +35,11 @@ function updateLilbraryDisplay() {
         const BookCard = document.createElement("div");
         BookCard.classList.add("book-card");
 
-        const bookInfo = document.createElement("div");
+        const bookInfo = document.createElement("p");
         bookInfo.textContent = book.bookInfo();
 
-        // const bookTitle = document.createElement("p");
-        // bookTitle.classList.add("bookTitle");
-        // bookTitle.textContent = this.title.value;
-
-        // const bookAuthor = document.createElement("p");
-        // bookAuthor.classList.add("bookAuthor");
-        // bookAuthor.textContent = this.author.value;
-
-        // const bookPages = document.createElement("p");
-        // bookPages.classList.add("bookPages");
-        // bookPages.textContent = this.pages.value;
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("libraryButtonContainer");
 
         const bookRead = document.createElement("button")
         bookRead.textContent = book.read ? "Read" : "Not Read";
@@ -60,6 +51,7 @@ function updateLilbraryDisplay() {
 
         const removeButton = document.createElement("button");
         removeButton.classList.add("removeButton");
+        removeButton.textContent = "Delete";
         removeButton.addEventListener("click", () => {
             myLibrary.splice(index, 1);
             updateLilbraryDisplay();
@@ -67,12 +59,10 @@ function updateLilbraryDisplay() {
 
         BookCard.appendChild(bookInfo);
 
-        // BookCard.appendChild(bookTitle);
-        // BookCard.appendChild(bookAuthor);
-        // BookCard.appendChild(bookPages);
+        buttonContainer.appendChild(bookRead);
+        buttonContainer.appendChild(removeButton);
 
-        BookCard.appendChild(bookRead);
-        BookCard.appendChild(removeButton);
+        BookCard.appendChild(buttonContainer);
 
         Library.appendChild(BookCard);
     })
