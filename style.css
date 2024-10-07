@@ -42,7 +42,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 body {
     display: grid;
-    grid-template-rows: minmax(100px, 1fr) minmax(auto, 8fr);
+    grid-template-rows: minmax(100px, 1fr) 8.5fr;
     overflow: auto;
 }
 
@@ -50,6 +50,7 @@ header {
     display: flex;
     justify-content: center;
     padding: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     .heading-title {
         font-size: 1.5rem;
