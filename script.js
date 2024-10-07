@@ -5,13 +5,15 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.bookInfo = function () {
-        message = `${this.title} by ${this.author}, ${this.pages} pages`;
-        if (this.read) {
-            message += ", read";
-        } else {
-            message += ", not yet read";
-        } return message;
+
+    this.bookTitle = function () {
+        return `${this.title}`;
+    }
+    this.bookAuthor = function () {
+        return ` by ${this.author}`;
+    }
+    this.bookPages = function () {
+        return ` ${this.pages} pages`;
     }
 }
 
@@ -35,8 +37,21 @@ function updateLilbraryDisplay() {
         const BookCard = document.createElement("div");
         BookCard.classList.add("book-card");
 
-        const bookInfo = document.createElement("p");
-        bookInfo.textContent = book.bookInfo();
+        const bookInfoContainer = document.createElement("div");
+        bookInfoContainer.classList.add("bookInfoContainer");
+
+        const bookTitle = document.createElement("p");
+        bookTitle.classList.add("bookTitle");
+        bookTitle.textContent = book.bookTitle();
+
+        const bookAuthor = document.createElement("p");
+        bookAuthor.classList.add("bookAuthor");
+        bookAuthor.textContent = book.bookAuthor();
+        
+        const bookPages = document.createElement("p");
+        bookPages.classList.add("bookPages");
+        bookPages.textContent = book.bookPages();
+
 
         const buttonContainer = document.createElement("div");
         buttonContainer.classList.add("libraryButtonContainer");
@@ -57,11 +72,15 @@ function updateLilbraryDisplay() {
             updateLilbraryDisplay();
         })
 
-        BookCard.appendChild(bookInfo);
+
+        bookInfoContainer.appendChild(bookTitle);
+        bookInfoContainer.appendChild(bookAuthor);
+        bookInfoContainer.appendChild(bookPages);
 
         buttonContainer.appendChild(bookRead);
         buttonContainer.appendChild(removeButton);
 
+        BookCard.appendChild(bookInfoContainer);
         BookCard.appendChild(buttonContainer);
 
         Library.appendChild(BookCard);

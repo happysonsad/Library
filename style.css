@@ -155,22 +155,61 @@ main {
     margin-left: 0.5rem;
 }
 
+.bookInfoContainer {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bookInfoContainer::after  {
+    content: " ";
+    position: absolute;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5rem;
+    width: 125%;
+    bottom: -10px;
+}
+
+.bookTitle {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+
+.libraryButtonContainer {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
 .readStatus {
     border: none;
     border-radius: 1rem;
-    padding: 3px 10px;
+    padding: 3px 15px;
     background-color: var(--bg-clr-lightBlue-mix-oragne);
     color: var(--white-text);
     font-weight: bold;
+    cursor: pointer;
+
 }
 
 .removeButton {
     border: none;
     border-radius: 1rem;
-    padding: 3px 10px;
+    padding: 3px 15px;
     background-color: #f08080;
     font-weight: bold;
     color: var(--white-text);
+    cursor: pointer;
+}
+
+.removeButton:hover,
+.readStatus:hover {
+    background-color: rgba(90, 11, 208, 0.2);
 }
 
 /* new book */
@@ -179,8 +218,8 @@ main {
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    height: 10vh;
-    gap: 0.5rem;
+    height: 20vh;
+    gap: 1.5rem;
     width: 100%;
     align-items: center;
     background-color: var(--sky-blue);
@@ -188,10 +227,6 @@ main {
     box-shadow: var(--border-shadow);
 }
 
-.libraryButtonContainer {
-    display: flex;
-    gap: 2rem;
-}
 
 #addBookModal {
     display: none; /* Hidden by default */
@@ -214,4 +249,45 @@ main {
 @keyframes fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
+}
+
+@media screen and (max-width: 700px) {
+    .bookInfoContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .bookInfoContainer::after  {
+        content: " ";
+        position: absolute;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 5rem;
+        width: 80%;
+        bottom: -10px;
+    }
+
+    .book-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 30vh;
+        gap: 1.5rem;
+        width: 100%;
+        align-items: center;
+        background-color: var(--sky-blue);
+        border-radius: 1.5rem;
+        box-shadow: var(--border-shadow);
+    }
+
+    .libraryButtonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
