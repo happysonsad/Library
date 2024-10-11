@@ -1,21 +1,26 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-
-    this.bookTitle = function () {
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    
+    bookTitle() {
         return `${this.title}`;
     }
-    this.bookAuthor = function () {
+
+    bookAuthor() {
         return ` by ${this.author}`;
     }
-    this.bookPages = function () {
+
+    bookPages() {
         return ` ${this.pages} pages`;
     }
 }
+
 
 function addBookToLibrary() {
     let title = document.querySelector("#title").value;
@@ -26,7 +31,6 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     updateLilbraryDisplay();
     document.querySelector("#bookForm").reset();
-    addBookModal.style.display = "none";
 }
 
 function updateLilbraryDisplay() {
@@ -87,20 +91,21 @@ function updateLilbraryDisplay() {
     })
 }
 
-document.querySelector("#bookForm").addEventListener("submit", function(event) {
+document.querySelector("#bookForm").addEventListener("submit", (event) => {
     event.preventDefault();
     addBookToLibrary();
-    console.log(myLibrary);
+
+    addBookModal.style.display = "none";
 })
 
 // Modal
 const addBookButton = document.querySelector(".addBookButton");
 
-addBookButton.addEventListener("click", function() {
+addBookButton.addEventListener("click", () => {
     addBookModal.style.display = "flex";
 })
 
-window.addEventListener("click", function(event) {
+window.addEventListener("click", (event) => {
     if(event.target == addBookModal) {
         addBookModal.style.display = "none";
     }
